@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
+
+
+#Слагане на имидж версия
+kubectl set image deployment.v1.apps/nginx-deployment nginx=nginx:1.16.1
+#Смяна на имидж версия от командния ред
+kubectl set image deployment/nginx-deployment nginx=nginx:1.16.1
+#Редактиране на деплоймънт
+kubectl edit deployment/nginx-deployment
+#Статус на деплоймънт
+kubectl rollout status deployment/nginx-deployment
