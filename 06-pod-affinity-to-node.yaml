@@ -18,3 +18,24 @@ spec:
     - command: ["sleep", "3600"]
       name: pod-node-affinity-container
       image: busybox
+
+
+#Работещо
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: with-node-affinity
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: topology.kubernetes.io/hostname
+            operator: In
+            values:
+            - node2
+  containers:
+  - name: with-node-affinity
+    image: registry.k8s.io/pause:2.0
