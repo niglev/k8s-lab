@@ -1,3 +1,5 @@
+1. - Направете така че да се стартира на всеки 5мин.
+
 ---
 # https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/
 apiVersion: batch/v1
