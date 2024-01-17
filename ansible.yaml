@@ -1,0 +1,27 @@
+- name: Install nfs-common
+  ansible.builtin.apt:
+    name: nfs-common
+    state: present
+
+- name: Create NFS1
+  ansible.builtin.file:
+    path: /opt/nfs1
+    state: directory
+    mode: '0775'
+
+- name: Create NFS2
+  ansible.builtin.file:
+    path: /opt/nfs2
+    state: directory
+    mode: '0775'
+
+
+- name: Create NFS3
+  ansible.builtin.file:
+    path: /opt/nfs3
+    state: directory
+    mode: '0775'    
+
+
+- name: MOunt NFS1
+  ansible.builtin.command: /usr/bin/make_database.sh db_user db_name creates=/path/to/database  
