@@ -32,7 +32,7 @@ spec:
       requiredDuringSchedulingIgnoredDuringExecution:
         nodeSelectorTerms:
         - matchExpressions:
-          - key: topology.kubernetes.io/hostname
+          - key: kubernetes.io/hostname
             operator: In
             values:
             - node2
