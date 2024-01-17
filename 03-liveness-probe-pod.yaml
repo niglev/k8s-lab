@@ -1,0 +1,14 @@
+1 - Сменете контейнера да е nginx
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: liveness
+spec:
+  containers:
+  - image: linuxacademycontent/kubeserve
+    name: kubeserve
+    livenessProbe:
+      httpGet:
+        path: /
+        port: 80
