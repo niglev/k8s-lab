@@ -1,0 +1,5 @@
+1. Създайте Deployment който да има 2 Wordpress контейнера свързани с 1 Mysql контейнер.
+  Условия: 
+     - Ползвайте NodePort service за да покажете че работи Wordpress-a ( трябва да се вижда Start Install screen-a)
+     - Ползвайте secrets за да сложите паролите на mysql и wordpress
+     - Ползвайте configmap за да кажете на Wordprеss PHP.ini че memory_limit = 128M 
